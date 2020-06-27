@@ -16,7 +16,7 @@ if active market hours
     loop through active buys check for acceptable sell price.
         if acceptable sell price
             sell at market value
-    if buying power has enough buy threshhold #Assumption buying pawer is the 'settled cash'
+    if buying power has enough buy threshhold #Assumption buying power is the 'settled cash' # Possibly regt_buying_power
         loop through potential buys
             find best acceptable buy
                 if acceptable buy
@@ -29,14 +29,32 @@ Get timezone
 Set timezone
 Get time
 Get Day of the week
+Set active days of week
 Get active hours start
 Get active hours end
-sleep
+if_active_market_hours
+Sleep
 Set active hours start
 Set active hours end
+Get buying power
 Get threshold
 Set threshold
 Get active buys
-Set active buy
+Set active buy # Permanent storage system
+Get stock price
+Buy # Market # Should we double check price? no.
+Sell # Market
+list_active_positions() #APIs
+find_best_possible_buy
+is_acceptable_sell_price(active_buy)
+"""
 
+"""
+tests:
+"""
+
+"""
+Edge Cases:
+Start of buying day
+End of buying day
 """
