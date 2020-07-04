@@ -1,14 +1,18 @@
 import alpaca_trade_api as tradeapi
 from config import vars
+from clock import APIClock
 
 #set the api
 api = tradeapi.REST(vars["APCA_API_KEY_ID"], vars["APCA_API_SECRET_KEY"], api_version='v2')
 
 account = api.get_account()
 
-api.list_positions
+api.list_positions()
 
-print(account)
+instance = APIClock(api)
+
+print(instance.isActiveMarketHours())#account)
+
 
 """
 Psedo Main Runtime Routine #limit 60 transactions per minute
@@ -25,14 +29,14 @@ if active market hours
 
 """
 Required Function List:
-Get timezone
+Get timezone # All seriallized according to ISO8601
 Set timezone
 Get time
 Get Day of the week
 Set active days of week
 Get active hours start
 Get active hours end
-if_active_market_hours
+is_active_market_hours
 Sleep
 Set active hours start
 Set active hours end
@@ -42,8 +46,8 @@ Set threshold
 Get active buys
 Set active buy # Permanent storage system
 Get stock price
-Buy # Market # Should we double check price? no.
-Sell # Market
+Buy # Limit # api.submit_order()
+Sell # Limit
 list_active_positions() #APIs
 find_best_possible_buy
 is_acceptable_sell_price(active_buy)
@@ -58,3 +62,5 @@ Edge Cases:
 Start of buying day
 End of buying day
 """
+
+#REST.get_last_quote("tsla")
