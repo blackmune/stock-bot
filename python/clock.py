@@ -1,12 +1,9 @@
-import datetime
 class APIClock:
     def __init__(self, api):
         self.api = api
-    x = 4
     def isActiveMarketHours(self):
-        date = datetime.datetime.now()
-        calendar = self.api.get_calendar(start=date, end=date)
-        return "today"
+        clock = self.api.get_clock()
+        return clock.is_open
 
 """    
 clock = api.get_clock()
