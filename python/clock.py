@@ -1,9 +1,15 @@
+from datetime import date
 class APIClock:
+    today = date.today()
     def __init__(self, api):
         self.api = api
     def isActiveMarketHours(self):
         clock = self.api.get_clock()
         return clock.is_open
+    def getNextTradingDay(self):
+        calendar = self.api.get_calendar(self.today)
+
+        return calendar
 
 """    
 clock = api.get_clock()

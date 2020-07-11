@@ -9,10 +9,11 @@ account = api.get_account()
 
 api.list_positions()
 
-instance = APIClock(api)
+time = APIClock(api)
 
-print(instance.isActiveMarketHours())#account)
+#print(time.isActiveMarketHours())#account)
 
+print(time.getNextTradingDay())
 
 """
 Psedo Main Runtime Routine #limit 60 transactions per minute
