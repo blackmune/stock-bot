@@ -15,6 +15,7 @@ time = APIClock(api)
 
 print(time.getNextTradingDay())
 
+
 """
 Psedo Main Runtime Routine #limit 60 transactions per minute
 if active market hours
