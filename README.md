@@ -12,7 +12,7 @@
 ---
 ## Instalation:
 ### Python
-1. Copy the python/examble-vars.py to python/config.py
+1. Copy the python/example-vars.py to python/config.py
 1. Fill in the <KEY_ID> and <SECRET_ID> sections with your accounts keys
 ---
 ## How-to Use:
