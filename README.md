@@ -7,6 +7,7 @@
 - Alpaca Trading Account
 - Alpaca API Keys
 - Python3 and pip3
+    - ```sudo apt install python3 python3-pip ipython3```
 - Alpaca Module
     - ```pip3 install alpaca_trade_api```
 ---
