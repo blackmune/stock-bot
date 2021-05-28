@@ -1,4 +1,4 @@
-vars = {
+apca = {
         "APCA_API_BASE_URL": "https://api.alpaca.markets",
     "APCA_API_KEY_ID": "<key_id>",
     "APCA_API_SECRET_KEY": "<secret_key>",

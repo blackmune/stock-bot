@@ -1,9 +1,9 @@
 import alpaca_trade_api as tradeapi
-from config import vars
+from config import apca
 from clock import APIClock
 
 #set the api
-api = tradeapi.REST(vars["APCA_API_KEY_ID"], vars["APCA_API_SECRET_KEY"], api_version='v2')
+api = tradeapi.REST(apca["APCA_API_KEY_ID"], apca["APCA_API_SECRET_KEY"], api_version='v2')
 
 account = api.get_account()
 
@@ -14,7 +14,7 @@ time = APIClock(api)
 #print(time.isActiveMarketHours())#account)
 
 print(time.getNextTradingDay())
-
+pass
 """
 Psedo Main Runtime Routine #limit 60 transactions per minute
 if active market hours
