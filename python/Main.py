@@ -1,4 +1,5 @@
 import alpaca_trade_api as tradeapi
+import requests
 from config import apca
 from clock import APIClock
 
@@ -7,17 +8,18 @@ api = tradeapi.REST(apca["APCA_API_KEY_ID"], apca["APCA_API_SECRET_KEY"], api_ve
 
 account = api.get_account()
 
-api.list_positions()
+positions = api.list_positions()
 
 time = APIClock(api)
 
-#print(time.isActiveMarketHours())#account)
-
-print(time.getNextTradingDay())
+print(time.isActiveMarketHours())#account)
 pass
+## SNDL or LITB
+#orderRes = api.submit_order("SNDL", 1, "buy", "limit", "day", ".975", None, None, None, None, None, None, None, None, None)
+#print(orderRes)
 """
 Psedo Main Runtime Routine #limit 60 transactions per minute
-if active market hours
+if active market hours else sleep
     loop through active buys check for acceptable sell price.
         if acceptable sell price
             sell at market value
