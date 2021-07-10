@@ -1,10 +1,22 @@
 import alpaca_trade_api as tradeapi
 import requests
-from config import apca
+from config import apca, finhub
 from clock import APIClock
+import finnhub
 
-#set the api
-api = tradeapi.REST(apca["APCA_API_KEY_ID"], apca["APCA_API_SECRET_KEY"], api_version='v2')
+
+#set the apis
+api = tradeapi.REST(apca[0]["APCA_API_KEY_ID"], apca[0]["APCA_API_SECRET_KEY"], api_version='v2')
+finnhub_client = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
+
+finRes = finnhub_client.stock_candles('SNDL', 'D', 1590988249, 1591852249)
+print(finRes)
+
+print(finnhub_client.aggregate_indicator('SNDL', 'D'))
+
+print(finnhub_client.stock_dividends('KO', _from='2019-01-01', to='2020-01-01'))
+
+print(finnhub_client.company_basic_financials('SNDL', 'margin'))
 
 account = api.get_account()
 

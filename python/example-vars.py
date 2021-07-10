@@ -6,4 +6,7 @@ apca = {
     "APCA_RETRY_MAX": "3",
     "APCA_RETRY_WAIT": "3",
     "APCA_RETRY_CODES": "429,504",
+},
+finhub = {
+    "FIN_HUB_KEY": "<key_id>"
 }
