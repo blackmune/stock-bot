@@ -1,5 +1,6 @@
 import alpaca_trade_api as tradeapi
 import requests
+import time
 from config import apca, finhub
 from clock import APIClock
 import finnhub
@@ -9,28 +10,26 @@ import finnhub
 api = tradeapi.REST(apca[0]["APCA_API_KEY_ID"], apca[0]["APCA_API_SECRET_KEY"], api_version='v2')
 finnhub_client = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
 
-finRes = finnhub_client.stock_candles('SNDL', 'D', 1590988249, 1591852249)
+finRes = finnhub_client.stock_candles('SNDL', 'D', 1590988249, time.time_ns())
 print(finRes)
 
 print(finnhub_client.aggregate_indicator('SNDL', 'D'))
 
-print(finnhub_client.stock_dividends('KO', _from='2019-01-01', to='2020-01-01'))
+# print(finnhub_client.company_basic_financials('SNDL', 'margin'))
 
-print(finnhub_client.company_basic_financials('SNDL', 'margin'))
+# account = api.get_account()
 
-account = api.get_account()
+# positions = api.list_positions()
 
-positions = api.list_positions()
+# timer = APIClock(api)
 
-time = APIClock(api)
-
-print(time.isActiveMarketHours())#account)
-pass
+# print(timer.isActiveMarketHours())#account)
+# pass
 ## SNDL or LITB
 #orderRes = api.submit_order("SNDL", 1, "buy", "limit", "day", ".975", None, None, None, None, None, None, None, None, None)
 #print(orderRes)
 """
-Psedo Main Runtime Routine #limit 60 transactions per minute
+Psedo Main Runtimer Routine #limit 60 transactions per minute
 if active market hours else sleep
     loop through active buys check for acceptable sell price.
         if acceptable sell price
@@ -44,9 +43,9 @@ if active market hours else sleep
 
 """
 Required Function List:
-Get timezone # All seriallized according to ISO8601
-Set timezone
-Get time
+Get timerzone # All seriallized according to ISO8601
+Set timerzone
+Get timer
 Get Day of the week
 Set active days of week
 Get active hours start
