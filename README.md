@@ -7,12 +7,13 @@
 - Alpaca Trading Account
 - Alpaca API Keys
 - Python3 and pip3
+    - ```sudo apt install python3 python3-pip ipython3```
 - Alpaca Module
     - ```pip3 install alpaca_trade_api```
 ---
 ## Instalation:
 ### Python
-1. Copy the python/examble-vars.py to python/config.py
+1. Copy the python/example-vars.py to python/config.py
 1. Fill in the <KEY_ID> and <SECRET_ID> sections with your accounts keys
 ---
 ## How-to Use:
