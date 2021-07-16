@@ -9,4 +9,9 @@ apca = {
 },
 finhub = {
     "FIN_HUB_KEY": "<key_id>"
+},
+vars = {
+    "ticks": ['SNDL'],
+    "hist-start": 0, # In days, 0 for now
+    "hist-end": 10 # In days, how far to go back in time
 }
