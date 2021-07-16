@@ -1,37 +1,50 @@
 import alpaca_trade_api as tradeapi
 import requests
+import time
 from config import apca, finhub
 from clock import APIClock
 import finnhub
 
-
-#set the apis
+## Setup the APIs
 api = tradeapi.REST(apca[0]["APCA_API_KEY_ID"], apca[0]["APCA_API_SECRET_KEY"], api_version='v2')
-finnhub_client = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
+finnhub = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
 
-finRes = finnhub_client.stock_candles('SNDL', 'D', 1590988249, 1591852249)
-print(finRes)
 
-print(finnhub_client.aggregate_indicator('SNDL', 'D'))
+## TODO: time functions
+# now
+# today
+# next market open
+# next market close
+# isMarketOpen() | returns bool
 
-print(finnhub_client.stock_dividends('KO', _from='2019-01-01', to='2020-01-01'))
+## TODO: api functions
+# #set the apis
 
-print(finnhub_client.company_basic_financials('SNDL', 'margin'))
+# finRes = finnhub.stock_candles('SNDL', 'D', time.time(), startOfDay)
+# print(finRes,"\n\n")
 
-account = api.get_account()
+# api.get_clock()['is_open']
 
-positions = api.list_positions()
+# print(finnhub.aggregate_indicator('SNDL', 'D'),"\n\n") 
 
-time = APIClock(api)
+# print(finnhub.company_basic_financials('SNDL', 'margin'),"\n\n")
 
-print(time.isActiveMarketHours())#account)
+# account = api.get_account()
+
+# positions = api.list_positions()
+
+## TODO trade functions
+
+timeses = APIClock(api)
+
+print(timeses.isActiveMarketHours())#account)
 pass
 ## SNDL or LITB
 #orderRes = api.submit_order("SNDL", 1, "buy", "limit", "day", ".975", None, None, None, None, None, None, None, None, None)
 #print(orderRes)
 """
 Psedo Main Runtime Routine #limit 60 transactions per minute
-if active market hours else sleep
+if active market hours else sleep #super inefficient, refactor
     loop through active buys check for acceptable sell price.
         if acceptable sell price
             sell at market value
