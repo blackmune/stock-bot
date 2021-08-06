@@ -4,7 +4,7 @@ import time
 from config import apca, finhub
 import finnhub
 
-api = tradeapi.REST(apca[0]["APCA_API_KEY_ID"], apca[0]["APCA_API_SECRET_KEY"], api_version='v2')
+api = tradeapi.REST(apca["APCA_API_KEY_ID"], apca["APCA_API_SECRET_KEY"], api_version='v2')
 #clock = APIClock
 from Clock import APIClock
 
