@@ -15,6 +15,7 @@ class APIClock:
     # next market close
     def getNextClose(self):
         return self.clock.next_close
+    # is now between market open and market close
 
 """    
 clock = api.get_clock()

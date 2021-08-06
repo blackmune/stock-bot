@@ -19,8 +19,11 @@ now = time.time()
 # next market open
 nextOpen = APICLOCK.getNextOpen()
 # next market close
-nextOpen = APICLOCK.getNextClose()
+nextClose = APICLOCK.getNextClose()
+
 # isMarketOpen() | returns bool
+print(APICLOCK.isActiveMarketHours())
+
 
 ## TODO: api functions
 # #set the apis
@@ -40,9 +43,6 @@ nextOpen = APICLOCK.getNextClose()
 
 ## TODO trade functions
 
-timeses = APIClock(api)
-
-print(timeses.isActiveMarketHours())#account)
 pass
 ## SNDL or LITB
 #orderRes = api.submit_order("SNDL", 1, "buy", "limit", "day", ".975", None, None, None, None, None, None, None, None, None)
