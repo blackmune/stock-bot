@@ -2,19 +2,24 @@ import alpaca_trade_api as tradeapi
 import requests
 import time
 from config import apca, finhub
-from clock import APIClock
 import finnhub
 
-## Setup the APIs
 api = tradeapi.REST(apca[0]["APCA_API_KEY_ID"], apca[0]["APCA_API_SECRET_KEY"], api_version='v2')
+#clock = APIClock
+from Clock import APIClock
+
+## Setup the APIs
 finnhub = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
+APICLOCK = APIClock(api)
 
-
-## TODO: time functions
+## TODO: time functions and clock class
 # now
+now = time.time()
 # today
 # next market open
+nextOpen = APICLOCK.getNextOpen()
 # next market close
+nextOpen = APICLOCK.getNextClose()
 # isMarketOpen() | returns bool
 
 ## TODO: api functions
@@ -23,49 +28,28 @@ finnhub = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
 # finRes = finnhub.stock_candles('SNDL', 'D', time.time(), startOfDay)
 # print(finRes,"\n\n")
 
-<<<<<<< HEAD
 # api.get_clock()['is_open']
-=======
-finRes = finnhub_client.stock_candles('SNDL', 'D', 1590988249, time.time_ns())
-print(finRes)
->>>>>>> bd7597071c23758ed7b19e8be66e92efc9c47f0f
 
 # print(finnhub.aggregate_indicator('SNDL', 'D'),"\n\n") 
 
-<<<<<<< HEAD
 # print(finnhub.company_basic_financials('SNDL', 'margin'),"\n\n")
-=======
-# print(finnhub_client.company_basic_financials('SNDL', 'margin'))
->>>>>>> bd7597071c23758ed7b19e8be66e92efc9c47f0f
 
 # account = api.get_account()
 
 # positions = api.list_positions()
 
-<<<<<<< HEAD
 ## TODO trade functions
 
 timeses = APIClock(api)
 
 print(timeses.isActiveMarketHours())#account)
 pass
-=======
-# timer = APIClock(api)
-
-# print(timer.isActiveMarketHours())#account)
-# pass
->>>>>>> bd7597071c23758ed7b19e8be66e92efc9c47f0f
 ## SNDL or LITB
 #orderRes = api.submit_order("SNDL", 1, "buy", "limit", "day", ".975", None, None, None, None, None, None, None, None, None)
 #print(orderRes)
 """
-<<<<<<< HEAD
 Psedo Main Runtime Routine #limit 60 transactions per minute
 if active market hours else sleep #super inefficient, refactor
-=======
-Psedo Main Runtimer Routine #limit 60 transactions per minute
-if active market hours else sleep
->>>>>>> bd7597071c23758ed7b19e8be66e92efc9c47f0f
     loop through active buys check for acceptable sell price.
         if acceptable sell price
             sell at market value

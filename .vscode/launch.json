@@ -17,6 +17,14 @@
       "request": "launch",
       "program": "python/Main.py",
       "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: UnitTests",
+      "type": "python",
+      "request": "launch",
+      "program": "python/UnitTests.py",
+      "console": "integratedTerminal",
+      "args": []
     }
   ]
 }
