@@ -12,17 +12,17 @@
       "console": "integratedTerminal"
     },
     {
-      "name": "Python: Main.py",
+      "name": "Python: main.py",
       "type": "python",
       "request": "launch",
-      "program": "python/Main.py",
+      "program": "main.py",
       "console": "integratedTerminal"
     },
     {
       "name": "Python: UnitTests",
       "type": "python",
       "request": "launch",
-      "program": "python/UnitTests.py",
+      "program": "src/UnitTests.py",
       "console": "integratedTerminal",
       "args": []
     }
