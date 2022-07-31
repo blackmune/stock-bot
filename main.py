@@ -24,6 +24,23 @@ nextClose = APICLOCK.getNextClose()
 # isMarketOpen() | returns bool
 print(APICLOCK.isActiveMarketHours())
 
+# @click.command()
+# @click.option("--method", "-m", default="all",
+#               help="Training method to perform {\"NB\", \"LR\", \"all\"} (default: all)")
+# @click.option("--training", "-t", default="data/training.csv",
+#               help="Training data to use for model (default: data/training.csv)")
+# @click.option("--prior", "-p", default=0.01, type=float, help="The prior to use for MAP (default: 0.01)")
+# @click.option("--testing", "--input", "-i", default="data/testing.csv",
+#               help="Testing data to use for output generation (default: data/testing.csv)")
+# @click.option("--outfile", "-o", default="result.csv",
+#               help="Output file postfix, will be prefixed with computation method (default: result.csv)")
+# @click.option("lambda_v", "--lambda", "-l", default=0.1,
+#               help="lambda dampening value for LR (default: 0.1)")
+# @click.option("--eta", "-e", default=0.1,
+#               help="initial eta learning rate for LR (default: 0.1)")
+# @click.option("--iterations", "--itr", default=500,
+#               help="Number of iterations to train LR (default: 500)")
+
 
 ## TODO: api functions
 # #set the apis
