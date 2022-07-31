@@ -1,3 +1,12 @@
+print("hello")
+
+from alpaca.data import CryptoHistoricalDataClient, StockHistoricalDataClient
+
+# no keys required.
+crypto_client = CryptoHistoricalDataClient()
+pass
+# # keys required
+# stock_client = StockHistoricalDataClient("api-key",  "secret-key")
 # import alpaca_trade_api as tradeapi
 # import requests
 # import time
