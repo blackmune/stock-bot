@@ -1,28 +1,28 @@
-import alpaca_trade_api as tradeapi
-import requests
-import time
-from config import apca, finhub
-import finnhub
+# import alpaca_trade_api as tradeapi
+# import requests
+# import time
+# from config import apca, finhub
+# import finnhub
 
-api = tradeapi.REST(apca["APCA_API_KEY_ID"], apca["APCA_API_SECRET_KEY"], api_version='v2')
-#clock = APIClock
-from Clock import APIClock
+# api = tradeapi.REST(apca["APCA_API_KEY_ID"], apca["APCA_API_SECRET_KEY"], api_version='v2')
+# #clock = APIClock
+# from Clock import APIClock
 
-## Setup the APIs
-finnhub = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
-APICLOCK = APIClock(api)
+# ## Setup the APIs
+# finnhub = finnhub.Client(api_key=finhub["FIN_HUB_KEY"])
+# APICLOCK = APIClock(api)
 
-## TODO: time functions and clock class
-# now
-now = time.time()
-# today
-# next market open
-nextOpen = APICLOCK.getNextOpen()
-# next market close
-nextClose = APICLOCK.getNextClose()
+# ## TODO: time functions and clock class
+# # now
+# now = time.time()
+# # today
+# # next market open
+# nextOpen = APICLOCK.getNextOpen()
+# # next market close
+# nextClose = APICLOCK.getNextClose()
 
-# isMarketOpen() | returns bool
-print(APICLOCK.isActiveMarketHours())
+# # isMarketOpen() | returns bool
+# print(APICLOCK.isActiveMarketHours())
 
 # @click.command()
 # @click.option("--method", "-m", default="all",
