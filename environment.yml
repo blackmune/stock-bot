@@ -1,0 +1,9 @@
+name: stock-bot
+channels:
+- defaults
+dependencies:
+- python=3.10
+- requests
+- numpy
+- alpaca-py
+prefix: ~/workspace/personal/stock-bot
